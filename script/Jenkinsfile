@@ -9,16 +9,16 @@ pipeline{
             sh 'mvn clean'
             sh 'mvn validate'
             sh 'mvn compile'
-            sh 'install'
-            sh 'test' 
-            sh 'package'
+            sh 'mvn install'
+            sh 'mvn test' 
+            sh 'mvn package'
         }
     }
     stage('upload artifact'){
         steps{
             sh 'curl -uadmin:AP5hovDc2p15yy6qPUt69bTZWL3 -T \
             target/bio*.jar \
-            "http://ec2-52-91-152-122.compute-1.amazonaws.com:8081/artifactory/geolocation/geo/bio_${BUILD_ID}.jar"'
+            "http://ec2-52-86-32-49.compute-1.amazonaws.com:8081/artifactory/geolocation/geo/bio_${BUILD_ID}"'
         }
     }
 }
