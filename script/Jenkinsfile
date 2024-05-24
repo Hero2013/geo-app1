@@ -25,8 +25,8 @@ sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.pr
     stage('upload artifact'){
         steps{
             sh 'curl -uadmin:AP5hovDc2p15yy6qPUt69bTZWL3 -T \
-            target/bio*.jar \
-            "http://ec2-52-86-32-49.compute-1.amazonaws.com:8081/artifactory/geolocation/geo/bio_${BUILD_ID}"'
+    target/geosolution*.jar \
+    "http://54.90.31.101:8081/artifactory/geosolution/file1_${BUILD_ID}.jar"'
         }
     }
 }
