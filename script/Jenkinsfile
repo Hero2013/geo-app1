@@ -24,9 +24,9 @@ sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.pr
     }
     stage('upload artifact'){
         steps{
-            sh 'curl -uadmin:AP5hovDc2p15yy6qPUt69bTZWL3 -T \
-    target/bio*.jar \
-    "http://54.90.31.101:8081/artifactory/geosolution/file1/bio-${BUILD_ID}.jar"'
+            sh 'curl -u<USERNAME>:<PASSWORD> -T \
+            target/bio*.jar \
+            "http://52.206.62.39:8081/artifactory/geosolution/file2/bio-${BUILD_ID}.jar"'
         }
     }
 }
